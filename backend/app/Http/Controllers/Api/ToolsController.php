@@ -17,7 +17,7 @@ class ToolsController extends Controller
         ]);
 
         $file = $request->file('image');
-        $quality = $request->input('quality', 60);
+        $quality = (int) $request->input('quality', 60);
 
         try {
             $manager = new ImageManager(new Driver());
